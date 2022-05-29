@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  registry:
+    container_name: docker-registry
+    restart: always
+    image: registry:2
+    ports:
+      - "5000:5000"
+    environment:
+      REGISTRY_HTTP_SECRET: "iiot-core"
+      REGISTRY_HTTP_ADDR: "0.0.0.0:5000"
+      REGISTRY_HTTP_TLS_CERTIFICATE: "/certs/registry.crt"
+      REGISTRY_HTTP_TLS_KEY: "/certs/registry.key"
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data/Docker-Registry 
+      REGISTRY_STORAGE_DELETE_ENABLED: true 
+    volumes:
+      - ./data:/data/Docker-Registry
+      - ./certs:/certs
+
+  docker-registry-ui:
+    image: konradkleine/docker-registry-frontend:v2
+    container_name: docker-registry-ui
+    restart: always
+    ports:
+    - "8080:80"
+    environment:
+        ENV_DOCKER_REGISTRY_HOST: docker-registry
+        ENV_DOCKER_REGISTRY_PORT: 5000
