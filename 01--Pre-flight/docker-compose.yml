@@ -12,10 +12,10 @@ services:
       REGISTRY_HTTP_ADDR: "0.0.0.0:5000"
       REGISTRY_HTTP_TLS_CERTIFICATE: "/certs/registry.crt"
       REGISTRY_HTTP_TLS_KEY: "/certs/registry.key"
-      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data/Docker-Registry 
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /Docker-Registry 
       REGISTRY_STORAGE_DELETE_ENABLED: true 
     volumes:
-      - ./data:/data/Docker-Registry
+      - ./data:/Docker-Registry
       - ./certs:/certs
 
   docker-registry-ui:

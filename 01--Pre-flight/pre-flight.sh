@@ -44,7 +44,9 @@ sleep 2s
 echo -e "Jq installed .."
 
 # Install Helm
-snap install helm --classic
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
 sleep 2s
 echo -e "Helm installed .."
 sleep 2s
