@@ -141,7 +141,7 @@ On bootup, RKE2 will check to see if a registries.yaml file exists at /etc/ranch
 
 ``/etc/rancher/k3s/registries.yaml:``
 ```
-cd /etc/rancher/k3s
+cd /etc/n k3s
 sudo nano registries.yaml
 ```
 
@@ -157,8 +157,8 @@ configs:
       username: admin # this is the registry username
       password: password # this is the registry password
     tls:
-      cert_file: /cert/registry.crt # path to the cert file used in the registry
-      key_file:  /cert/registry.key # path to the key file used in the registry
+      cert_file: /certs/registry.crt # path to the cert file used in the registry
+      key_file:  /certs/registry.key # path to the key file used in the registry
       ca_file:   # path to the ca file used in the registry
 ```
 
