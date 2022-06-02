@@ -116,7 +116,7 @@ From version 2.2.0 onwards, Foundry manages Custom Resource Definitions (CRDs) f
 
 ``deploy custom-resource-definitions:``
 ```
-cd ~/Foundry-2.3
+cd Foundry-2.3
 ./bin/apply-crds.sh --insecure -e -r foundry.skytap.example:5000 -u admin -p password -D true 2>&1 | tee -a ~/Foundry-2.3/Logs/apply-crds-2.3.log
 ```
 
@@ -126,7 +126,7 @@ cd ~/Foundry-2.3
 
 ``deploy solution control-plane:``
 ```
-cd ~/Foundry-2.3
+cd Foundry-2.3
 ./bin/install-control-plane.sh -I -r foundry.skytap.example:5000 -u admin -p password -D true 2>&1 | tee -a ~/Foundry-2.3/Logs/install-control-plane-2.3.log
 ```
 
@@ -134,10 +134,13 @@ cd ~/Foundry-2.3
 
   > navigate to: https://iiot-core.skytap.example:30443/hitachi-solutions/hscp-hitachi-solutions/solution-control-plane/ 
 
+Username: foundry
+Password: 
 
+``retrieve the password:``
+```
 echo $(kubectl get keycloakusers -n hitachi-solutions keycloak-user -o jsonpath='{.spec.user.credentials[0].value}')
-
-
-https://iiot-core.skytap.example:30443/hitachi-solutions/hscp-hitachi-solutions/solution-control-plane/ 
+```
+or just type: ``foundry`` in a terminal.
 
 The default username is `keycloak` and password is `start123`
