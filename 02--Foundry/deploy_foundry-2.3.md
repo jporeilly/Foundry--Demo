@@ -49,7 +49,7 @@ kubectl get pods -n openebs
 ```
 kubectl patch storageclass openebs-hostpath -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
-Note: Only have storageclass set as default.
+Note: Only have storageclass set as default.  
 ``patch 'local-path' storageclass:``
 ```
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
@@ -93,16 +93,20 @@ mkdir Foundry-2.3/Logs
 
 ``untar Foundry-2.3 directory:``
 ```
-cd /data
-tar -C ~/Foundry-2.3 -xzvf  /data/Packages/Foundry-Control-Plane-2.3.0.tgz
+tar -C ~/Foundry-2.3 -xzvf  ~/Packages/Foundry-Control-Plane-2.3.0.tgz
 ```
 
 Foundry's Control plane expects that the Kubernetes cluster is running with, Istio, cert-manager and has a default StorageClass defined 
 
 ```
-cd ~/Foundry-2.3
+cd Foundry-2.3
 ./bin/install-cluster-services.sh -I -r foundry.skytap.example:5000 -u admin -p password -D true 2>&1 | tee -a ~/Foundry-2.3/Logs/install-cluster-services-2.3.log
 ```
+Note: If you have a permission denied while trying to connect to docker daemon then execute: 
+
+``sudo chmod 666 /var/run/docker.sock`` # you need to be aware that this allows any user/non-root-process access  to the docker socket which can completely compromise your system. Demo env only.
+``sudo usermod -aG docker $USER`` # ensures user id added to docker group
+``sudo chown -R  $(id -u):$(id -g) $HOME/.kube/`` # check [user] owns the .kube/config 
 
 ---
 
