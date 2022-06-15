@@ -104,14 +104,9 @@ sudo nano daemon.json
 
 ``login into the Registry:``
 ```
-docker login localhost:5000
+docker login foundry.skytap.example:5000
 Username: admin
 Password: password  
-```
-
-``check certs:``
-```
-openssl s_client -showcerts -connect foundry.skytap.example:5000
 ```
 
 ---
@@ -138,11 +133,13 @@ sudo ./k3s-uninstall.sh
 
 ---
 
+<em>Configure Registry with K3s</em> 
+
 On bootup, RKE2 will check to see if a registries.yaml file exists at /etc/rancher/r3s/ and instruct containerd to use any registries defined in the file. If you wish to use a private registry, then you will need to create this file as root on each node that will be using the registry.
 
 ``/etc/rancher/k3s/registries.yaml:``
 ```
-cd /etc/n k3s
+cd /etc/rancher/k3s k3s
 sudo nano registries.yaml
 ```
 
