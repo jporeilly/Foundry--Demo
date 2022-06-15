@@ -135,6 +135,7 @@ If you're having problems connecting to the node, ensure that the /etc/rancher/k
 cd /usr/local/bin/
 sudo ./k3s-uninstall.sh
 ```
+
 ---
 
 On bootup, RKE2 will check to see if a registries.yaml file exists at /etc/rancher/r3s/ and instruct containerd to use any registries defined in the file. If you wish to use a private registry, then you will need to create this file as root on each node that will be using the registry.
