@@ -8,7 +8,7 @@
 #
 # Install Docker
 # Install Docker Compose
-# Install Docker Registry 
+# Update Docker daemon 
 #
 # 29/05/2022
 # ==============================================================
@@ -84,7 +84,7 @@ sleep 3s
 echo -e "Docker installed .."
 
 
-# Install Latest Stable Docker Release
+# Install Latest Docker Compose
 sleep 3s
 echo -e "Install Docker Compose .."
 dnf install curl wget -y
