@@ -104,7 +104,7 @@ cd Foundry-2.3
 ```
 Note: If you have a permission denied while trying to connect to docker daemon then execute: 
 
-``sudo chmod 666 /var/run/docker.sock`` # you need to be aware that this allows any user/non-root-process access  to the docker socket which can completely compromise your system. Demo env only.
+``sudo chmod 666 /var/run/docker.sock`` # you need to be aware that this allows any user/non-root-process access  to the docker socket which can completely compromise your system. Demo env only.  
 ``sudo usermod -aG docker $USER`` # ensures user id added to docker group
 ``sudo chown -R  $(id -u):$(id -g) $HOME/.kube/`` # check [user] owns the .kube/config 
 
