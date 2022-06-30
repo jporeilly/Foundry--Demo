@@ -1,5 +1,5 @@
 ## <font color='red'>Hitachi Vantara Foundry Platform</font>
-The following workshop is intended to highlight an on-premise bare-metal installation and configuration of IIoT 5.0. The installation and configuration steps have been modified for a training environment and therefore are <font color='red'>NOT</font> to be used for a production environment.
+The following workshop is intended to highlight an on-premise bare-metal installation and configuration of foundry Platform 2.4. The installation and configuration steps have been modified for a training environment and therefore are <font color='red'>NOT</font> to be used for a production environment.
 
 #### <font color='red'>Module 01 - Pre-flight</font>
 * Configure SkyTap Lab
